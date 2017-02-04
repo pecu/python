@@ -1,7 +1,10 @@
-import cgitb
-cgitb.enable()
+import mysql.connector as mariadb
 
-print("Content-Type: text/plain;charset=utf-8")
-print()
+mariadb_connection = mariadb.connect(user='root', password='firstbank', database='firstbank')
+cursor = mariadb_connection.cursor()
 
-print("Hello World!")
+cursor.execute("SELECT * FROM testTB;")
+for Cid, Name in cursor:
+  print("Cid: {}, Name: {}").format(Cid,Name)
+  
+mariadb_connection.close()
