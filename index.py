@@ -5,7 +5,7 @@ import pymysql as mariadb
 #測試連接MariaDB數據庫
 try:
     conn = mariadb.connect(
-        host='localhost',
+        host='127.0.0.1',
         user='root',
         passwd='firstbank',
         db='firstbank',
